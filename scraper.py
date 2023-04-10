@@ -19,7 +19,7 @@ MAX_RESULTS = 199
 def search_comments_by_keyword(keyword):
     # Set up the API endpoint and parameters
     url = 'https://www.reddit.com/search.json'
-    params = {'q': keyword, 'type': 'comment', 'limit': 100, 'sort': 'new'}
+    params = {'q': keyword, 'type': 'comment', 'limit': 100, 'sort': 'new', 'include_facets': False,}
     comments = []
     while len(comments) < MAX_RESULTS:
         # Send the request and get the response JSON data
@@ -39,6 +39,7 @@ def search_comments_by_keyword(keyword):
         time.sleep(0.1)  # Sleep for 100ms between each loop
     return comments
 
+# Check that comment has the keyword and some form of the verbs we are looking for
 def extract_string(s, keyword, verb):
     keyword_forms = generate_verb_forms(verb.lower())
     for keyword in keyword_forms:
