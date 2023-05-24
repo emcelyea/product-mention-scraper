@@ -1,12 +1,12 @@
 # product-mention-scraper
-Testing a scraper for keyword mentions on reddit
+Testing a ~~scraper~~ for keyword mentions on reddit
 
 ### Considerations
 The ideal performance would be a user types in a keyword (i.e. spiderman) and a list of every occurence is returned.
 This is untenable for a few reasons:
 
 ### Conclusion
-* This was fairly successful, I decided to get the most value out of this we want two fields: An object and a list of verbs.
+* This was fairly successful, I didnt end up scraping but pushshift provides a pretty solid API for reddit (way better than Reddit).
 * If you just search for an object i.e. 'carrots' you are going to get a ludicrous amount of noise around your search.
 * I included a list of verbs that we also check for in the comments. So I want all comments around ('carrots', ['cook', 'plant'])
 
